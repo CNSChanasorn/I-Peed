@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peed's Mall</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: conic-gradient(from 90deg, salmon, lightpink, #f08080, #ffd1d1, salmon);
+        }
+
+        .form-container {
+            position: relative;
+            max-width: 640px;
+            margin: 0 auto;
+            background-color: rgb(252, 206, 206);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon-circle {
+            position: absolute;
+            top: 35px;
+            right: 40px;
+            width: 120px;
+            height: 120px;
+            background-image: url('peed.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: left;
+            color: #d12929;
+            font-size: xx-large;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            text-align: left;
+            color: hsl(0, 95%, 66%);
+            font-size: x-large;
+            margin-top: 0;
+        }
+
+        form {
+            display: grid;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="date"], select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #c86b6b;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 20px;
+        }
+
+        .radio-group label {
+            font-weight: normal;
+        }
+
+        .checkbox-group {
+            display: grid;
+            gap: 10px;
+            grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+        }
+
+        button {
+            font-weight: bold;
+            padding: 10px 15px;
+            background-color: #7bf98c;
+            color: rgb(240, 63, 63);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="reset"] {
+            background-color: rgb(254, 151, 151);
+            color: #0bf82b;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        .name-surname-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .name-surname-group > div {
+            flex: 1;
+        }
+
+        .gender-dob-group {
+            display: flex;
+            gap: 30px;
+            justify-content: space-between;
+        }
+
+        .gender-dob-group label {
+            font-weight: bold;
+        }
+
+        .radio-group {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.radio-group input[type="radio"] {
+    display: none;
+}
+
+.radio-group label {
+    position: relative;
+    padding: 15px;
+    background-color: #ddd;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+
+.radio-group input[type="radio"]:checked + label {
+    opacity: 1;
+    border-color: #333;
+}
+
+.radio-group label:hover {
+    opacity: 1;
+}
+
+.radio-group label:nth-child(1) { background-color: #736038; } /* Iron */
+.radio-group label:nth-child(2) { background-color: #d1a15e; } /* Bronze */
+.radio-group label:nth-child(3) { background-color: #b3b3b3; } /* Silver */
+.radio-group label:nth-child(4) { background-color: #f4c542; } /* Gold */
+.radio-group label:nth-child(5) { background-color: #6abf47; } /* Platinum */
+.radio-group label:nth-child(6) { background-color: #4bbfdf; } /* Diamond */
+.radio-group label:nth-child(7) { background-color: #a44f94; } /* Ascendant */
+.radio-group label:nth-child(8) { background-color: #f25c5c; } /* Immortal */
+.radio-group label:nth-child(9) { background-color: #8a2be2; } /* Radiant */
+
+.radio-group input[type="radio"]:checked + label {
+    border: 2px solid #333;
+}
+
+.radio-group label:hover {
+    background-color: #f0f0f0;
+    opacity: 1;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="icon-circle"></div>
+        <h2>I Peed Shopping Mall</h2>
+        <h3>Member Registration</h3>
+        <form id="registrationForm" onsubmit="alert('CLicked'); return false;">
+            <label for="title">Title:</label>
+            <select id="title" name="title" required>
+                <option value="">Select Title</option>
+                <option value="Mr">Mr</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Miss">Miss</option>
+                <option value="Dr">Dr</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <div class="name-surname-group">
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="surname">Surname:</label>
+                    <input type="text" id="surname" name="surname" required>
+                </div>
+            </div>
+
+            <div class="gender-dob-group">
+                <div>
+                    <label for="gender">Gender:</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="gender" value="male" required> Male</label>
+                        <label><input type="radio" name="gender" value="female" required> Female</label>
+                        <label><input type="radio" name="gender" value="Other" required> Other</label>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+            </div>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="4" required></textarea>
+
+            <label for="Interesting">Interesting:</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="Interesting" value="Clothes"> Clothes</label>
+                <label><input type="checkbox" name="Interesting" value="Make Up"> Make Up</label>
+                <label><input type="checkbox" name="Interesting" value="Toy"> Toy</label>
+                <label><input type="checkbox" name="Interesting" value="Electronic"> Electronic</label>
+                <label><input type="checkbox" name="Interesting" value="Food"> Food</label>
+                <label><input type="checkbox" name="Interesting" value="Other"> Other</label>
+            </div>
+
+            <label for="mt">Member type:</label>
+            <div class="radio-group">
+                <label><input type="radio" name="mt" value="Iron" required> Iron</label>
+                <label><input type="radio" name="mt" value="Bronze" required> Bronze</label>
+                <label><input type="radio" name="mt" value="Silver" required> Silver</label>
+                <label><input type="radio" name="mt" value="Gold" required> Gold</label>
+                <label><input type="radio" name="mt" value="Platinum" required> Platinum</label>
+                <label><input type="radio" name="mt" value="Diamond" required> Diamond</label>
+                <label><input type="radio" name="mt" value="Ascendant" required> Ascendant</label>
+                <label><input type="radio" name="mt" value="Immortal" required> Immortal</label>
+                <label><input type="radio" name="mt" value="Radiant" required> Radiant</label>
+            </div>            
+
+            <label for="image">Upload ID Image:</label>
+            <input type="file" id="image" name="image" accept="image/*">
+
+            <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
+        </form>
+    </div>
+</body>
+</html>
